@@ -10,6 +10,7 @@ import Products from "./Components/Products";
 import Cart from "./Components/Cart";
 import Help from "./Components/Help";
 import Error from "./Components/Error";
+import Account from "./Components/Account";
 import './App.css';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route exact path="/produtos" element={<Products/>}/>
           <Route exact path="/carrinho" element={<Cart/>}/>
           <Route exact path="/ajuda" element={<Help/>}/>
+          <Route exact path="/conta" element={<Account/>}/>
           <Route exact path="*" element={<Error errorCode={'404'} errorMessage={error404menssage}/>}/>
         </Routes>
         <Footer />

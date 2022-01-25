@@ -1,0 +1,28 @@
+.account {
+    background: var(--background);
+    color: var(--text);
+}
+.account .account-content {
+    padding: 3rem 2rem;
+}
+.account .account-content section+section {
+    margin-top: 2rem;
+}
+.account .account-content section#cart a.show-more {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 1rem;
+    background: var(--background-two-ts);
+    color: var(--text);
+    text-decoration: none;
+    transition: var(--transition);
+}
+.account .account-content section#cart p.totalValue {
+    margin: 0;
+}
+.account .account-content section#alter-pass form,
+.account .account-content section#delete-account form {
+    max-width: 450px;
+    margin: 0 auto;
+}

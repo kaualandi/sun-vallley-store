@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import HeaderContents from './HeaderContents';
 import MyData from './MyData';
 import MyOrders from './MyOrders';
 import CartList from './CartList';
+import './Styles/Account.css';
 
 function Account() {
+    const [totalValue, setTotalValue] = useState(0);
     return (
         <div className="account">
             <HeaderContents title={'Minha conta'}/>
@@ -15,13 +18,14 @@ function Account() {
             
                 <section id='my-orders'>
                     <h2>Meus pedidos</h2>
-                    <MyOrders/>
+                    <MyOrders />
                 </section>
 
                 <section id='cart'>
                     <h2>Meu carrinho</h2>
-                    <CartList/>
-                    <a className={'fancy-border-radius'} href="/carrinho">Ver mais</a>
+                    <p className='totalValue'>Total: {totalValue.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
+                    <CartList setTotalValue={setTotalValue}/>
+                    <a className='fancy-border-radius show-more' href="/carrinho">Ver mais</a>
                 </section>
 
                 <section id="alter-pass">
