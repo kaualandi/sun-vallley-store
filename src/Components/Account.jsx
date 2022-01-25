@@ -47,6 +47,7 @@ function Account() {
                 <section id="delete-account">
                     <h2>Excluir conta</h2>
                     <form>
+                        <p className='upper-case text-center'>Cuidado! Essa ação é irreversível!</p>
                         <label>Senha atual
                             <input type="password" placeholder="Sua senha atual" />
                         </label>

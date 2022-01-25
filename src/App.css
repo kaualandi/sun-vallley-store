@@ -31,6 +31,9 @@ img, svg {
   backdrop-filter: blur(6px);
   border-radius: 10px;
 }
+.upper-case {
+  text-transform: uppercase;
+}
 
 label {
   display: block;

@@ -1,0 +1,11 @@
+.my-data .my-data-content form .row {
+    max-width: 680px;
+    margin: 0 auto;
+}
+.my-data .my-data-content form label {
+    padding: .5rem;
+}
+.my-data .my-data-content form button {
+    width: fit-content;
+    margin: 1rem auto 0;
+}

@@ -1,0 +1,13 @@
+.my-orders {
+    overflow: auto;
+    max-height: 500px;
+}
+.my-orders th {
+    color: var(--title);
+}
+.my-orders td {
+    color: var(--text);
+}
+.my-orders table {
+    min-width: 650px;
+}

@@ -1,19 +1,12 @@
-import { useEffect } from 'react';
-import AOS from 'aos';
 import './Styles/CartItem.css';
 
 function CartItem({ cartItem }) {
     function removeToCart(cartItem) {
         console.log(`Removendo ${cartItem.name} do carrinho`);
     }
-    useEffect(() => {
-        AOS.init({
-            delay: 300,
-        });
-    }, []);
 
     return (
-        <div data-aos="zoom-in" className="cartItem col-12 col-lg-6">
+        <div className="cartItem col-12 col-lg-6">
             <div className="cartItem-container glass-efect">
                 <div className="cartItem-details">
                     <div className="cartItem-image">

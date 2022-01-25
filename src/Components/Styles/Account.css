@@ -8,6 +8,10 @@
 .account .account-content section+section {
     margin-top: 2rem;
 }
+.account .account-content section form button {
+    width: fit-content;
+    margin: 1rem auto 0;
+}
 .account .account-content section#cart a.show-more {
     display: block;
     width: fit-content;
@@ -25,4 +29,10 @@
 .account .account-content section#delete-account form {
     max-width: 450px;
     margin: 0 auto;
+}
+.account .account-content section#delete-account form {
+    background-color: #4b2828;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 2px solid #1a0e0e;
 }

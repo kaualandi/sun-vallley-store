@@ -7,9 +7,7 @@ function Product({ product }) {
         console.log(`Adding ${product.name} to cart`);
     }
     useEffect(() => {
-        AOS.init({
-            delay: 300,
-        });
+        AOS.init();
     }, []);
 
     return (
