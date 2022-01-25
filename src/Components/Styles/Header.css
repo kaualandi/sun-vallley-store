@@ -1,0 +1,23 @@
+.navbar {
+    background-color: var(--background-two-ts);
+}
+.navbar a {
+    color: var(--title) !important;
+}
+.navbar .navbar-toggler {
+    border: 0;
+    color: var(--title);
+}
+.navbar button.navbar-toggler:focus {
+    outline: 0;
+    box-shadow: none;
+}
+.navbar a.nav-link {
+    transition: .3s;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.navbar a.nav-link:hover {
+    background-color: var(--background);
+    transform: translateY(-5px);
+}

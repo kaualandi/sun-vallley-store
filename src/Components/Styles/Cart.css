@@ -1,0 +1,23 @@
+.cart {
+    background-color: var(--background);
+    color: var(--text);
+    min-height: calc(100vh - 48.8px);
+}
+.cart .cart-content {
+    margin-top: 3rem;
+    padding-bottom: 3rem;
+}
+.cart .cart-content .cart-content__buy {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+.cart .cart-content .cart-content__buy p {
+    margin: 0;
+    margin-right: 1rem;
+}
+.cart .cart-content .cart-content__buy button {
+    width: fit-content;
+    margin: 0;
+}

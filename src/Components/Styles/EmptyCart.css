@@ -1,0 +1,14 @@
+.empty-cart {
+    color: var(--text);
+}
+.empty-cart .empty-cart__image {
+    max-width: 50%;
+}
+.empty-cart .empty-cart__content a {
+    color: var(--text);
+    text-decoration: none;
+    transition: var(--transition);
+    background: var(--background-two-ts);
+    padding: 1rem;
+    display: inline-block;
+}

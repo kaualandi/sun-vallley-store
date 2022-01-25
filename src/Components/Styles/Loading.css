@@ -1,0 +1,18 @@
+.loading {
+  height:4px;
+  width:130px;
+  background:
+   linear-gradient(var(--primary) 0 0),
+   linear-gradient(var(--primary) 0 0),
+   #d7b8fc;
+ background-size: 60% 100%;
+ background-repeat: no-repeat;
+ animation: p6 3s infinite;
+ width: 100%;
+}
+
+@keyframes p6 {
+ 0%   {background-position:-150% 0,-150% 0}
+ 66%  {background-position: 250% 0,-150% 0}
+ 100% {background-position: 250% 0, 250% 0}
+}

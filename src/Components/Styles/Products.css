@@ -1,0 +1,26 @@
+.products {
+    background-color: var(--background);
+    color: var(--text);
+    min-height: calc(100vh - 48.8px);
+}
+.products h3 {
+    color: var(--title);
+}
+.products .products-content {
+    margin-top: 3rem;
+    padding-bottom: 3rem;
+}
+.products .products-content .products-content__filter button {
+    display: inline-block;
+    width: fit-content;
+    margin: 0;
+}
+.products .products-content .products-content__filter button+button {
+    margin-left: .5rem;
+}
+.products .products-content .products-content__filter button.focus {
+    background-color: var(--primary);
+}
+.products .products-content .products-content_list {
+    margin-top: 2rem;
+}
