@@ -1,4 +1,3 @@
-import logo from './logo.png';
 import './Styles/HeaderContents.css';
 
 function HeaderContents({title}) {
