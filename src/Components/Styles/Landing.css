@@ -19,7 +19,7 @@
 .landing .landing-header img {
     width: 60vw;
     max-width: 400px;
-    margin: auto;
+    margin: 0 auto;
 }
 .landing .landing-content {
     background: var(--background);
