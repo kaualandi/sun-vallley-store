@@ -4,7 +4,7 @@ import Loading from "./Loading";
 function FaqList() {
     const [faq, setFaq] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    // const [error, setError] = useState(null);
 useEffect(() => {
         // fetch("https://api.myjson.com/bins/1hjv7i")
         //     .then((response) => response.json())
