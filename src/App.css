@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap');
 :root {
   --primary: #712fc3;
   --background: #1b1d1e;
@@ -8,7 +7,6 @@
   --text: #f3f3f3;
   --text-hover: #7832CF;
   --title: #fffff3;
-  --font: 'Poppins', sans-serif;
   --transition: all 0.3s ease-in-out;
   --shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
@@ -40,7 +38,7 @@ label {
 label+label {
   margin-top: 0.5rem;
 }
-input {
+input, textarea {
   display: block;
   border-radius: 0 8px 8px 8px;
   border: none;
@@ -49,15 +47,21 @@ input {
   background: var(--background-two-ts);
   transition: var(--transition);
   width: 100%;
+  border: var(--title) 1px solid;
+  box-sizing: border-box !important;
+
 }
 button.btn:hover {
   background: var(--primary);
   color: var(--text);
 }
-input:focus, button.btn:focus {
+input:hover, textarea:hover {
+  border-color: var(--primary);
+}
+input:focus, button.btn:focus, textarea:focus {
   outline: none;
   background: var(--background-two);
-  color: var(--text);
+  color: var(--primary);
   box-shadow: none;
 }
 button.btn {
@@ -70,6 +74,7 @@ button.btn {
   transition: var(--transition);
   width: 100%;
   margin-top: .8rem;
+  border: var(--title) 1px solid;
 }
 
 .wrapper {

@@ -65,7 +65,7 @@
     transition: all 0.3s ease-in-out;
     display: block;
     width: fit-content;
-    margin: auto;
+    margin: 0 auto;
 }
 .landing .landing-content .landing-content-item a:hover {
     background: var(--background-two);

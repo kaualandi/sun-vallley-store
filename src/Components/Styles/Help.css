@@ -1,0 +1,45 @@
+.help {
+    color: var(--text);
+    background-color: var(--background);
+    min-height: calc(100vh - 48.8px);
+}
+.help .help-content {
+    padding: 3rem 2rem;
+}
+.help .help-content section+section {
+    margin-top: 2rem;
+}
+.help .help-content section#faq .faq-item {
+    padding: .7rem 0;
+    height: 100%;
+}
+.help .help-content section#faq .faq-item .faq-item-content {
+    padding: 1rem;
+    height: 100%;
+    box-shadow: var(--shadow);
+}
+.help .help-content section#faq .faq-item .faq-item-content p {
+    margin: 0;
+}
+.help .help-content section#contact .socialList {
+    font-size: 1.5rem;
+}
+.help .help-content section#contact .socialList a {
+    color: var(--title);
+    transition: var(--transition);
+}
+.help .help-content section#contact .socialList a:hover {
+    color: var(--primary);
+}
+.help .help-content section#contact .socialList a+a {
+    margin-left: 1rem;
+}
+.help .help-content section#contact form .col-12 textarea {
+    height: 180px;
+    resize: none;
+}
+.help .help-content section#contact form button {
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 1rem;
+}

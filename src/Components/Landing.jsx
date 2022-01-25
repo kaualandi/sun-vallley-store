@@ -3,8 +3,8 @@ import Typist from 'react-typist';
 
 import './Styles/Landing.css';
 import Cart from './Vectors/Cart';
-import Login from './Vectors/Login';
 import AddCart from './Vectors/AddCart';
+import ChatBegin from './Vectors/ChatBegin';
 import logo from './logo.png';
 
 function Landing() {
@@ -20,7 +20,7 @@ function Landing() {
                     <div className="landing-content-item row">
                         <div className="text col-12 col-sm-6">
                             <h2>Produtos</h2>
-                            <p>Veja os produtos disponíveis para compra sem precisar entrar ou se cadastrar</p>
+                            <p>Veja os produtos disponíveis para compra sem precisar entrar ou se cadastrar.</p>
                             <a href='/produtos' className="button fancy-border-radius">Ver produtos</a>
                         </div>
                         <div className="image col-12 col-sm-6">
@@ -33,18 +33,18 @@ function Landing() {
                         </div>
                         <div className="text col-12 col-sm-6">
                             <h2>Entre</h2>
-                            <p>Se já tem cadastro, entre e adicione produtos ao seu carrinho</p>
+                            <p>Se já tem cadastro, entre e adicione produtos ao seu carrinho.</p>
                             <a href='/entrar' className="button fancy-border-radius">Entrar</a>
                         </div>
                     </div>
                     <div className="landing-content-item row">
                         <div className="text col-12 col-sm-6">
-                            <h2>Cadastre-se</h2>
-                            <p>Faça seu cadastro, Nosso estoque é limitado.</p>
-                            <a href='/cadastrar' className="button fancy-border-radius">Cadastrar-se</a>
+                            <h2>Ainda tem dúvidas?</h2>
+                            <p>Não hesite em nos contactar ou leia as dúvidas frequentes na página de ajuda.</p>
+                            <a href='/ajuda' className="button fancy-border-radius">Ajuda</a>
                         </div>
                         <div className="image col-12 col-sm-6">
-                            <Login />
+                            <ChatBegin />
                         </div>
                     </div>
                 </div>

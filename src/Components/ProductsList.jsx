@@ -86,7 +86,8 @@ function ProductsList({filter}) {
         <div className="products-list row">
         {products.map(product => (
             <Product key={product.id} product={product}/>
-        ))}
+            ))}
+            <div className="end text-center"><h4>Fim 😣</h4></div>
         </div>
     );
 }
