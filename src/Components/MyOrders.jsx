@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import moment from 'moment'
+import moment from 'moment';
 import Loading from './Loading';
 import './Styles/MyOrders.css';
 
@@ -27,23 +27,23 @@ function MyOrders() {
         setLoading(true);
         setOrders([
             {
-                id: 1,
+                id: '#1',
                 date: '24/12/2021',
-                status: 'Pendente',
+                status: 'Em aberto',
                 details: 'Spotify, Minecraft, LOL',
                 total: 'R$ 100,00',
                 warranty: isWarranty('24/12/2021') ? 'Sim' : 'Não'
             },
             {
-                id: 2,
-                date: '1/1/2022',
+                id: '#2',
+                date: '01/01/2022',
                 status: 'Finalizado',
                 details: 'Spotify, Minecraft, LOL',
                 total: 'R$ 100,00',
                 warranty: isWarranty('1/1/2022') ? 'Sim' : 'Não'
             },
             {
-                id: 3,
+                id: '#3',
                 date: '25/12/2021',
                 status: 'Cancelado',
                 details: 'Spotify, Minecraft, LOL',

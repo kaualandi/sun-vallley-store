@@ -9,7 +9,7 @@ function Account() {
     const [totalValue, setTotalValue] = useState(0);
     return (
         <div className="account">
-            <HeaderContents title={'Minha conta'}/>
+            <HeaderContents title={'Minha Conta'}/>
             <div className="account-content container">
                 <section id='my-data'>
                     <h2>Meus dados</h2>

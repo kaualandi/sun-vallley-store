@@ -41,7 +41,7 @@ label {
 label+label {
   margin-top: 0.5rem;
 }
-input, textarea {
+input, textarea, select {
   display: block;
   border-radius: 0 8px 8px 8px;
   border: none;
@@ -61,7 +61,7 @@ button.btn:hover {
 input:hover, textarea:hover {
   border-color: var(--primary);
 }
-input:focus, button.btn:focus, textarea:focus {
+input:focus, button.btn:focus, textarea:focus, select:focus {
   outline: none;
   background: var(--background-two);
   color: var(--primary);
@@ -79,7 +79,10 @@ button.btn {
   margin-top: .8rem;
   border: var(--title) 1px solid;
 }
-
+form button.btn {
+  width: fit-content;
+  margin: 1rem auto 0;
+}
 .wrapper {
   height: 100%;
   width: 100%;

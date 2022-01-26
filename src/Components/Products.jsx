@@ -17,6 +17,7 @@ function Products() {
                     <button onClick={() => setFilter('streaming')} className={filter === "streaming" ? 'focus btn' : 'btn'}>Streaming</button>
                     <button onClick={() => setFilter('vpn')} className={filter === "vpn" ? 'focus btn' : 'btn'}>VPN</button>
                     <button onClick={() => setFilter('premium')} className={filter === "premium" ? 'focus btn' : 'btn'}>Premium</button>
+                    <button onClick={() => setFilter('adultos')} className={filter === "adultos" ? 'focus btn' : 'btn'}>Adultos</button>
                 </div>
                 <div className="products-content_list">
                     <ProductsList filter={filter}/>

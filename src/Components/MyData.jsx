@@ -13,7 +13,6 @@ function MyData() {
             ...data,
             [e.target.name]: e.target.value
         });
-        // console.log(data);
     }
 
     function handleSubmit(e) {
