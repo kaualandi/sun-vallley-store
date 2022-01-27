@@ -48,7 +48,7 @@ function Landing() {
                         </div>
                     </div>
                 </div>
-                <div className='payment-metods'>
+                <div className='payment-metods landing'>
                     <img src="https://i.imgur.com/apj1EAq.png" alt="metodos de pagamentos" />
                 </div>
             </div>

@@ -1,5 +1,7 @@
 .navbar {
     background-color: var(--background-two-ts);
+    border-radius: 0 0 10px 10px;
+    box-shadow: var(--shadow);
 }
 .navbar a {
     color: var(--title) !important;
