@@ -24,7 +24,7 @@ function UsersConfig() {
                 email: 'kaualandi@hotmail.com',
                 phone: '+55 (21) 99999-9999',
                 status: 1,
-                power: 1,
+                function: 1,
             },
             {
                 id: 1,
@@ -32,7 +32,7 @@ function UsersConfig() {
                 email: 'damo@host.com',
                 phone: '+55 (11) 99999-9999',
                 status: 1,
-                power: 0,
+                function: 0,
             },
             {
                 id: 2,
@@ -40,7 +40,7 @@ function UsersConfig() {
                 email: 'damo@host.com',
                 phone: '+55 (99) 99999-9999',
                 status: 0,
-                power: 0,
+                function: 0,
             },
         ]);
 
@@ -78,7 +78,7 @@ function UsersConfig() {
                                 <th>E-mail</th>
                                 <th>Celular</th>
                                 <th>Status</th>
-                                <th>Poder</th>
+                                <th>Função</th>
                                 <th>Ações</th>
                             </tr>
                         </thead>
@@ -90,7 +90,7 @@ function UsersConfig() {
                                     <td>{user.email}</td>
                                     <td>{user.phone}</td>
                                     <td>{user.status ? 'Ativo' : 'Banido'}</td>
-                                    <td>{user.power ? 'Admin' : 'Usuário'}</td>
+                                    <td>{user.function ? 'Admin' : 'Usuário'}</td>
                                     <td className='actions'><button onClick={() => editUser(user)} className="button-table edit"><i className="fa-solid fa-pen"></i></button> <button onClick={() => dropUser(user.id)} className="button-table delete"><i className="fa-solid fa-trash"></i></button>
                                     </td>
                                 </tr>

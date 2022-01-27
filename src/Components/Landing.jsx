@@ -48,6 +48,9 @@ function Landing() {
                         </div>
                     </div>
                 </div>
+                <div className='payment-metods'>
+                    <img src="https://i.imgur.com/apj1EAq.png" alt="metodos de pagamentos" />
+                </div>
             </div>
         </div>
     );

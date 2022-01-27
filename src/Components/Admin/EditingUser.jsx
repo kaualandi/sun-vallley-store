@@ -46,8 +46,8 @@ function EditingUser({editing, setEditing}) {
                             </label>
                             </div>
                             <div className="col-12 col-sm-6 col-md-4">
-                            <label>Poder:
-                                <select value={editing.power} onChange={handleChange} name="status">
+                            <label>Função:
+                                <select value={editing.function} onChange={handleChange} name="status">
                                     <option value="0">Usuário</option>
                                     <option value="1">Admin</option>
                                 </select>
