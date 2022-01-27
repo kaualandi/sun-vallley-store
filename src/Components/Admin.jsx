@@ -32,11 +32,11 @@ function Admin() {
                                     <i className="fa-solid fa-user-gear"></i> <span className="ms-1 d-none d-sm-inline">Usuários</span>
                                     </a>
                                 </li>
-                                <li className="nav-item">
+                                {/* <li className="nav-item">
                                     <a href="#expense" className="nav-link align-middle px-0">
                                     <i className="fa-solid fa-chart-line-down"></i> <span className="ms-1 d-none d-sm-inline">Despesas</span>
                                     </a>
-                                </li>
+                                </li> */}
                                 {/* <li>
                                     <a href="#submenu2" data-bs-toggle="collapse" className="nav-link px-0 align-middle ">
                                         <i className="fs-4 bi-bootstrap"></i> <span className="ms-1 d-none d-sm-inline">Bootstrap</span></a>

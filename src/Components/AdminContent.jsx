@@ -3,7 +3,7 @@ import Dashboard from './Admin/Dashboard';
 import Orders from './Admin/Orders';
 import ProductsConfig from './Admin/ProductsConfig';
 import UsersConfig from './Admin/UsersConfig';
-import Graphic from './Admin/Graphic';
+// import Graphic from './Admin/Graphic';
 
 function AdminContent() {
 
@@ -24,10 +24,10 @@ function AdminContent() {
                 <h1>Usuários</h1>
                 <UsersConfig />
             </section>
-            <section id='expense'>
+            {/* <section id='expense'>
                 <h1>Despesas</h1>
                 <Graphic />
-            </section>
+            </section> */}
         </div>
     );
 }
