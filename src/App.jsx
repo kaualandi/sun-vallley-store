@@ -12,6 +12,7 @@ import Help from "./Components/Help";
 import Error from "./Components/Error";
 import Account from "./Components/Account";
 import Admin from "./Components/Admin";
+import PaymentSteps from "./Components/PaymentSteps";
 import './App.css';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route exact path="/ajuda" element={<Help/>}/>
           <Route exact path="/conta" element={<Account/>}/>
           <Route exact path="/admin" element={<Admin/>}/>
+          <Route exact path="/finalizar-pedido" element={<PaymentSteps/>}/>
           <Route exact path="*" element={<Error errorCode={'404'} errorMessage={error404menssage}/>}/>
         </Routes>
         <Footer />
