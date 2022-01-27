@@ -19,7 +19,7 @@ function EditingUser({editing, setEditing}) {
     }
     return (
         <section id="editproduct">
-            <h3>Editando Produto</h3>
+            <h3>Editando usuário</h3>
             <form onSubmit={e => saveEditUser(e)} className=''>
                         <div className="row">
                             <div className="col-12 col-sm-6 col-md-4">
