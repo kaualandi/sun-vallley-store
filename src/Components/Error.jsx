@@ -1,3 +1,4 @@
+import React from 'react';
 import BotError from "./Vectors/BotError";
 import { useLocation } from "react-router-dom";
 import './Styles/Error.css';

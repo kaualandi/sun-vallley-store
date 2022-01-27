@@ -1,8 +1,8 @@
-import {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import Loading from '../Loading';
 import EditingProduct from './EditingProduct';
 
-function Products() {
+function ProductsConfig() {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [editing, setEditing] = useState(false);
@@ -141,7 +141,7 @@ function Products() {
                     </form>
             </section>
             <section id="manipulateproducts">
-                <h3>Produtos</h3>
+                <h3>Lista de produtos</h3>
                 <div className="table-container">
                     <table className='table'>
                         <thead>
@@ -158,7 +158,7 @@ function Products() {
                             {products.map(product => (
                                 <tr key={product.id}>
                                     <td>{product.name}</td>
-                                    <td>{product.price}</td>
+                                    <td>{product.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</td>
                                     <td>{product.category}</td>
                                     <td>{product.description}</td>
                                     <td><img src={product.image} alt="imagem do produto" /></td>
@@ -173,4 +173,4 @@ function Products() {
         </div>
     );
 }
-export default Products;
+export default ProductsConfig;

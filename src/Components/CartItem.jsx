@@ -1,3 +1,4 @@
+import React from 'react';
 import './Styles/CartItem.css';
 
 function CartItem({ cartItem }) {

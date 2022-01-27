@@ -1,3 +1,4 @@
+import React from 'react';
 function AddCart() {
     return (
         <svg width="803.05" height="591.38" data-name="Layer 1" viewBox="0 0 803.05238 591.37509" xmlns="http://www.w3.org/2000/svg">

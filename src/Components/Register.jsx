@@ -1,5 +1,5 @@
 import AOS from 'aos';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import InputMask from 'react-input-mask';
 
 import './Styles/Register.css';

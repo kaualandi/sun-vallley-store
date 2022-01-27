@@ -1,3 +1,4 @@
+import React from 'react';
 import HeaderContents from './HeaderContents';
 import AdminContent from './AdminContent';
 import './Styles/Admin.css';

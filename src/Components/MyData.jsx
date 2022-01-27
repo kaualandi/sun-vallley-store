@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import InputMask from 'react-input-mask';
 import Loading from './Loading';
 import './Styles/MyData.css';

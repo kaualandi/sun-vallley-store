@@ -13,7 +13,7 @@ function Landing() {
             <div className="landing-header">
                 <img src={logo} alt="SunValley Logo"/>
                 <h1>Bem vindo a <span className="landing-title wrapper">SunValley Store</span>.</h1>
-                <div className='paragraph'><Typist>A loja de serviços digitais mais barata do Brasil! 🛒</Typist></div>
+                <div className='paragraph'><Typist>A loja de serviços digitais mais barata do Brasil! <span role='img' aria-label='carrinho de supermercado'>🛒</span></Typist></div>
             </div>
             <div className="landing-content">
                 <div className="container">

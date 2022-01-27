@@ -78,24 +78,24 @@
 .admin .admin-content #orders .orders-filter {
     margin-top: .5rem;
 }
-.admin .admin-content #orders .table-container {
+.admin .admin-content .table-container {
     max-height: 700px;
     overflow: auto;
 }
-.admin .admin-content #orders th {
+.admin .admin-content th {
     color: var(--title);
 }
-.admin .admin-content #orders td {
+.admin .admin-content td {
     color: var(--text);
 }
-.admin .admin-content #orders td.actions {
+.admin .admin-content td.actions {
     text-align: center;
     width: 81px;
 }
-.admin .admin-content #orders table {
+.admin .admin-content table {
     min-width: 1100px;
 }
-.admin .admin-content #orders .table button.button-table {
+.admin .admin-content .table button.button-table {
     color: var(--title);
     border: 0;
     background: transparent;
@@ -112,54 +112,45 @@
     border-radius: 50%;
     border: 1px solid var(--text);
 }
-.admin .admin-content #orders .table button.button-table.close:hover {
+.admin .admin-content .table button.button-table.close:hover {
     background: red;
 }
-.admin .admin-content #orders .table button.button-table.check:hover {
+.admin .admin-content .table button.button-table.check:hover {
     background: limegreen;
 }
-
-.admin .admin-content #products .table-container {
-    max-height: 700px;
-    overflow: auto;
-}
-.admin .admin-content #products th {
-    color: var(--title);
-}
-.admin .admin-content #products td {
-    color: var(--text);
-}
-.admin .admin-content #products td img {
+.admin .admin-content td img {
     width: 60px;
     height: 60px;
 }
-.admin .admin-content #products td.actions {
-    text-align: center;
-    width: 81px;
-}
-.admin .admin-content #products .table {
-    min-width: 1100px;
-}
-.admin .admin-content #products .table button.button-table {
-    color: var(--title);
-    border: 0;
-    background: transparent;
-    transition: var(--transition);
-    font-size: 1.2rem;
-    display: inline;
-    padding: .3em;
-    width: 30px;
-    height: 30px;
-    background: var(--background-two);
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    border: 1px solid var(--text);
-}
-.admin .admin-content #products .table button.button-table.edit:hover {
+.admin .admin-content .table button.button-table.edit:hover {
     background: blue;
 }
-.admin .admin-content #products .table button.button-table.delete:hover {
+.admin .admin-content .table button.button-table.delete:hover {
     background: red;
+}
+
+.admin .admin-content #expense #expense-overview-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    max-width: 350px;
+    padding: 1.5rem;
+}
+.admin .admin-content #expense #expense-overview-content p {
+    margin: 0;
+    font-size: 1.2rem;
+}
+.admin .admin-content #expense #expense-overview-content p+p {
+    margin-top: 1rem;
+}
+.admin .admin-content #expense #expense-overview-content.red {
+    background-color: #4b2828;
+    border-radius: 10px;
+    border: 2px solid #1a0e0e;
+}
+.admin .admin-content #expense #expense-overview-content.green {
+    background-color: #2c4b28;
+    border-radius: 10px;
+    border: 2px solid #0f1a0e;
 }

@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import React, {useState} from 'react';
 import HeaderContents from "./HeaderContents";
 import ProductsList from "./ProductsList";
 import './Styles/Products.css';

@@ -1,3 +1,4 @@
+import React from 'react';
 function BotError() {
     return (
         <svg viewBox="0 0 284 413" xmlns="http://www.w3.org/2000/svg">

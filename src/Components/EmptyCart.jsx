@@ -1,3 +1,4 @@
+import React from 'react';
 import BotError from './Vectors/BotError.jsx';
 import './Styles/EmptyCart.css';
 function EmptyCart() {

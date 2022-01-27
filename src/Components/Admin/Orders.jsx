@@ -1,8 +1,8 @@
-import {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import moment from 'moment';
 import Loading from '../Loading';
 
-function Orders() {
+function Orders({setAllOrders, allOrders}) {
     const [orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(false);
     const [filter, setFilter] = useState('');
@@ -28,14 +28,14 @@ function Orders() {
 
     useEffect(() => {
         setLoading(true);
-        const allOrders = [
+        const AllOrders = [
             {
                 id: 0,
                 date: '01/01/2021',
                 client: 'João da Silva',
                 emailClient: 'demo@host.com',
                 details: 'Spotify, Minecraft, LOL',
-                total: 'R$ 100,00',
+                total: 20,
                 status: 'fechado',
                 warranty: isWarranty('01/01/2021') ? 'Sim' : 'Não'
             },
@@ -45,15 +45,15 @@ function Orders() {
                 client: 'João da Silva',
                 emailClient: 'demo@host.com',
                 details: 'Spotify, Minecraft, LOL',
-                total: 'R$ 100,00',
+                total: 20,
                 status: 'fechado',
                 warranty: isWarranty('01/01/2022') ? 'Sim' : 'Não'
             },
         ];
         if (filter === '') {
-            setOrders(allOrders);
+            setOrders(AllOrders);
         } else {
-            const filteredOrders = allOrders.filter(status => status.status === filter);
+            const filteredOrders = AllOrders.filter(status => status.status === filter);
             setOrders(filteredOrders);
         }
         // fetch(`/api/orders?filter=${filter}`)
@@ -101,7 +101,7 @@ function Orders() {
                     </tr>
                 </thead>
             </table>
-            <div className="end text-center"><h4>Nenhum pedido 😣</h4></div>
+            <div className="end text-center"><h4>Nenhum pedido <span role='img' aria-label='rosto perseverante'>😣</span></h4></div>
             </div>
             </div>
         );
@@ -140,7 +140,7 @@ function Orders() {
                         <td>{order.client}</td>
                         <td>{order.emailClient}</td>
                         <td>{order.details}</td>
-                        <td>{order.total}</td>
+                        <td>{order.total.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</td>
                         <td>{order.status}</td>
                         <td>{order.warranty}</td>
                         <td className='actions'><button onClick={() => actionOrder(order.id, 'close')} className='button-table close'><i className="fa-solid fa-xmark"></i></button> <button onClick={() => actionOrder(order.id, 'check')} className="button-table check"><i className="fa-solid fa-check"></i></button></td>

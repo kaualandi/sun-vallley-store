@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import Loading from './Loading';
 import CartItem from './CartItem';
 import EmptyCart from './EmptyCart';
@@ -45,6 +45,9 @@ function CartList({setTotalValue}) {
         setLoading(true);
         setTimeout(() => {
             setLoading(false);
+            setTotalValue(cartItens.reduce((acc, cur) => {
+                return acc + cur.price;
+            }, 0));
         }, 800);
         // fetch(`/api/products?${filter}`)
         // .then(res => res.json())
@@ -56,10 +59,7 @@ function CartList({setTotalValue}) {
         //     setError(err);
         //     setLoading(false);
         // });
-        cartItens.reduce((acc, cur) => {
-            setTotalValue(acc + cur.price);
-            return acc + cur.price;
-        }, 0);
+        
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     

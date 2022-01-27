@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import Product from './Product';
 import Loading from './Loading';
 import './Styles/ProductsList.css';
@@ -90,7 +90,7 @@ function ProductsList({filter}) {
         {products.map(product => (
             <Product key={product.id} product={product}/>
             ))}
-            <div className="end text-center"><h4>Fim 😣</h4></div>
+            <div className="end text-center"><h4>Fim <span role='img' aria-label='rosto perseverante'>😣</span></h4></div>
         </div>
     );
 }

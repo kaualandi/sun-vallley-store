@@ -1,3 +1,4 @@
+import React from 'react';
 function Login() {
     return (
         <svg width="870" height="520.14" data-name="Layer 1" viewBox="0 0 869.99994 520.13854" xmlns="http://www.w3.org/2000/svg">

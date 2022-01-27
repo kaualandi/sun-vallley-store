@@ -1,3 +1,4 @@
+import React from 'react';
 import './Styles/HeaderContents.css';
 
 function HeaderContents({title}) {

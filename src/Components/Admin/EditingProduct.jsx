@@ -5,7 +5,6 @@ function EditingProduct({editing, setEditing}) {
     // const [loading, setLoading] = useState(false);
 
     function saveEditProduct(e) {
-        console.log(e);
         e.preventDefault();
         console.log(`Salvando produto...`);
         setEditing(false);
@@ -15,7 +14,6 @@ function EditingProduct({editing, setEditing}) {
             ...editing,
             [e.target.name]: e.target.value
         });
-        // console.log(data);
         console.log(editing);
     }
     return (
@@ -55,7 +53,7 @@ function EditingProduct({editing, setEditing}) {
                             </label>
                             </div>
                         </div>
-                        <button className='btn' type="submit">Adicionar</button>
+                        <button className='btn' type="submit">Salvar e sair</button>
                     </form>
         </section>
     );
