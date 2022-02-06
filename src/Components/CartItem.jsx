@@ -17,7 +17,7 @@ function CartItem({ cartItem }) {
     function removeToCart() {
         setError(false);
         setLoading(true);
-        axios.post('http://'+window.location.hostname+'/api/removeToCart.php', itemToRemove)
+        axios.post('https://'+window.location.hostname+'/api/removeToCart.php', itemToRemove)
         .then(function (response) {
             let result = response.data;
             if (result.error) {
@@ -36,7 +36,7 @@ function CartItem({ cartItem }) {
     function changeQtdValue(state) {
         setError(false);
         setLoading(true);
-        axios.post('http://'+window.location.hostname+'/api/alterCartItem.php', {user_id: sessionStorage.getItem('user_id'), cart_id: cartItem.cart_id.toString(), state: state})
+        axios.post('https://'+window.location.hostname+'/api/alterCartItem.php', {user_id: sessionStorage.getItem('user_id'), cart_id: cartItem.cart_id.toString(), state: state})
         .then(function (response) {
             let result = response.data;
             if (result.error) {

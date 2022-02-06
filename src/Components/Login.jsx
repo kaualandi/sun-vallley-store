@@ -32,7 +32,7 @@ function Login() {
         e.preventDefault();
         setError(false);
         setLoading(true);
-        axios.post('http://'+window.location.hostname+'/api/login.php', loginInfors)
+        axios.post('https://'+window.location.hostname+'/api/login.php', loginInfors)
                 .then(function (response) {
                     let result = response.data;
                     if(result.success) {

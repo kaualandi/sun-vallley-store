@@ -9,7 +9,7 @@ function EditingProduct({editing, setEditing, setReflash}) {
     function saveEditProduct(e) {
         e.preventDefault();
         setLoading(true);
-        axios.post('http://'+window.location.hostname+'/api/admin/editProduct.php', {
+        axios.post('https://'+window.location.hostname+'/api/admin/editProduct.php', {
             user_id: sessionStorage.getItem('user_id'),
             product_id: editing.product_id,
             name: editing.name,

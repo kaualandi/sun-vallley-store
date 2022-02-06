@@ -25,7 +25,7 @@ function MyData() {
         e.preventDefault();
         setLoading(true);
         setError(false);
-        axios.post('http://' + window.location.hostname + '/api/alter-mydata.php', {
+        axios.post('https://' + window.location.hostname + '/api/alter-mydata.php', {
             user_id: sessionStorage.getItem('user_id'),
             name: data.name,
             email: data.email,
@@ -48,7 +48,7 @@ function MyData() {
     useEffect(() => {
         setLoading(true);
         setError(false);
-        axios.post('http://'+window.location.hostname+'/api/get-mydata.php', {
+        axios.post('https://'+window.location.hostname+'/api/get-mydata.php', {
             "user_id": sessionStorage.getItem('user_id')
             })
             .then(function (response) {

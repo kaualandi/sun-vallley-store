@@ -12,7 +12,7 @@ function ProductsList({filter}) {
     useEffect(() => {
         setLoading(true);
 
-        axios.post('http://'+window.location.hostname+'/api/products.php')
+        axios.post('https://'+window.location.hostname+'/api/products.php')
             .then(function (response) {
                 if (filter === '') {
                     setProducts(response.data);

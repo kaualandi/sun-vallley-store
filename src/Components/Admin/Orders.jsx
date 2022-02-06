@@ -26,7 +26,7 @@ function Orders({setAllOrders, allOrders}) {
 
     function actionOrder(order_id, action) {
         setLoading(true);
-        axios.post('http://'+window.location.hostname+'/api/admin/alterOrder.php', {
+        axios.post('https://'+window.location.hostname+'/api/admin/alterOrder.php', {
             user_id: sessionStorage.getItem('user_id'),
             order_id: order_id,
             action: action
@@ -39,7 +39,7 @@ function Orders({setAllOrders, allOrders}) {
             } else {
                 setSuccess(result.success);
                 
-                axios.post('http://'+window.location.hostname+'/api/getOrders.php', {
+                axios.post('https://'+window.location.hostname+'/api/getOrders.php', {
             user_id: sessionStorage.getItem('user_id')
         })
             .then(function (response) {
@@ -87,7 +87,7 @@ function Orders({setAllOrders, allOrders}) {
 
     useEffect(() => {
         setLoading(true);
-        axios.post('http://'+window.location.hostname+'/api/getOrders.php', {
+        axios.post('https://'+window.location.hostname+'/api/getOrders.php', {
             user_id: sessionStorage.getItem('user_id')
         })
             .then(function (response) {

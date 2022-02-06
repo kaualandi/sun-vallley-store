@@ -4,7 +4,7 @@ import './Styles/Header.css';
 
 function Header() {
     useEffect(() => {
-        axios.post('http://'+window.location.hostname+'/api/header.php', {
+        axios.post('https://'+window.location.hostname+'/api/header.php', {
             user_id: sessionStorage.getItem('user_id')
         })
         .then(function (response) {
@@ -23,7 +23,7 @@ function Header() {
 
     function logout(e) {
         e.preventDefault();
-        axios.post('http://'+window.location.hostname+'/api/logout.php')
+        axios.post('https://'+window.location.hostname+'/api/logout.php')
         .then(function (response) {
             let result = response.data;
             if (result.success) {

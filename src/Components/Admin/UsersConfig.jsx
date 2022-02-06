@@ -11,7 +11,7 @@ function UsersConfig() {
 
     function reloadList() {
         setLoading(true);
-        axios.post('http://'+window.location.hostname+'/api/admin/getUsers.php', {
+        axios.post('https://'+window.location.hostname+'/api/admin/getUsers.php', {
             user_id: sessionStorage.getItem('user_id')
         })
         .then(function (response) {
@@ -32,7 +32,7 @@ function UsersConfig() {
 
     function setBanned (id) {
         setLoading(true);
-        axios.post('http://'+window.location.hostname+'/api/admin/setBanned.php', {
+        axios.post('https://'+window.location.hostname+'/api/admin/setBanned.php', {
             user_id: sessionStorage.getItem('user_id'),
             id: id
         })
@@ -55,7 +55,7 @@ function UsersConfig() {
     
     function setUnbanned (id) {
         setLoading(true);
-        axios.post('http://'+window.location.hostname+'/api/admin/setUnbanned.php', {
+        axios.post('https://'+window.location.hostname+'/api/admin/setUnbanned.php', {
             user_id: sessionStorage.getItem('user_id'),
             id: id
         })
@@ -77,7 +77,7 @@ function UsersConfig() {
     }
     function setClient (id) {
         setLoading(true);
-        axios.post('http://'+window.location.hostname+'/api/admin/setClient.php', {
+        axios.post('https://'+window.location.hostname+'/api/admin/setClient.php', {
             user_id: sessionStorage.getItem('user_id'),
             id: id
         })
@@ -99,7 +99,7 @@ function UsersConfig() {
     }
     function setAdmin (id) {
         setLoading(true);
-        axios.post('http://'+window.location.hostname+'/api/admin/setAdmin.php', {
+        axios.post('https://'+window.location.hostname+'/api/admin/setAdmin.php', {
             user_id: sessionStorage.getItem('user_id'),
             id: id
         })
@@ -122,7 +122,7 @@ function UsersConfig() {
 
     useEffect(() => {
         setLoading(true);
-        axios.post('http://'+window.location.hostname+'/api/admin/getUsers.php', {
+        axios.post('https://'+window.location.hostname+'/api/admin/getUsers.php', {
             user_id: sessionStorage.getItem('user_id')
         })
         .then(function (response) {

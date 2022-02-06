@@ -41,7 +41,7 @@ function Account() {
         setLoadingAlterPass(true);
         setErrorAlterPass(false);
         setSuccessAlterPass(false);
-        axios.post('http://' + window.location.hostname + '/api/alterPass.php', {
+        axios.post('https://' + window.location.hostname + '/api/alterPass.php', {
             user_id: sessionStorage.getItem('user_id'),
             currentPass: alterPassInput.currentPass,
             newPass: alterPassInput.newPass,
@@ -66,7 +66,7 @@ function Account() {
         e.preventDefault();
         setLoadingDropAccount(true);
         setErrorDropAccount(false);
-        axios.post('http://' + window.location.hostname + '/api/dropAccount.php', {
+        axios.post('https://' + window.location.hostname + '/api/dropAccount.php', {
             user_id: sessionStorage.getItem('user_id'),
             confirmPass: dropAccountInput.confirmPass
         })

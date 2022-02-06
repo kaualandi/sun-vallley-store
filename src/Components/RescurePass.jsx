@@ -30,7 +30,7 @@ function RescurePass() {
         e.preventDefault();
         setError(false);
         setLoading(true);
-        axios.post('http://'+window.location.hostname+'/api/rescure-pass.php', rescurePassInfors)
+        axios.post('https://'+window.location.hostname+'/api/rescure-pass.php', rescurePassInfors)
                 .then(function (response) {
                     let result = response.data;
                     if(result.success) {

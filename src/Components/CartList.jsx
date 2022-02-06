@@ -20,7 +20,7 @@ function CartList({setTotalValue}) {
 
     useEffect(() => {
         setLoading(true);
-        axios.post('http://'+window.location.hostname+'/api/mycart.php',
+        axios.post('https://'+window.location.hostname+'/api/mycart.php',
         {user_id: sessionStorage.getItem('user_id')})
         .then(function (response) {
             if (response.data.error) {

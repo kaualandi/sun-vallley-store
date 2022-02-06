@@ -10,7 +10,7 @@ function Dashboard() {
     useEffect(() => {
         setLoading(true);
         
-        axios.post('http://'+window.location.hostname+'/api/admin/dashboard.php', {
+        axios.post('https://'+window.location.hostname+'/api/admin/dashboard.php', {
             user_id: sessionStorage.getItem('user_id')})
         .then(function (response) {
             let result = response.data;

@@ -32,7 +32,7 @@ function MyOrders() {
     useEffect(() => {
         setLoading(true);
 
-        axios.post('http://'+window.location.hostname+'/api/get-myorders.php', {
+        axios.post('https://'+window.location.hostname+'/api/get-myorders.php', {
             "user_id": sessionStorage.getItem('user_id')
             })
             .then(function (response) {

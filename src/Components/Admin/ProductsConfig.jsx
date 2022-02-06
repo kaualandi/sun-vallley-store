@@ -33,7 +33,7 @@ function ProductsConfig() {
         setErrorEdit(false);
         setSuccessEdit(false);
         setLoading(true);
-        axios.post('http://'+window.location.hostname+'/api/admin/dropProduct.php', {
+        axios.post('https://'+window.location.hostname+'/api/admin/dropProduct.php', {
             user_id: sessionStorage.getItem('user_id'),
             product_id: id
         })
@@ -44,7 +44,7 @@ function ProductsConfig() {
                 setLoading(false);
             } else {
                 setSuccessEdit(result.success);
-                    axios.post('http://'+window.location.hostname+'/api/products.php')
+                    axios.post('https://'+window.location.hostname+'/api/products.php')
                         .then(function (response) {
                             let result = response.data;
                             if (result.error) {
@@ -77,7 +77,7 @@ function ProductsConfig() {
         setLoading(true);
         setErrorAdd(false);
         setSuccessAdd(false);
-        axios.post('http://'+window.location.hostname+'/api/admin/addProduct.php', {
+        axios.post('https://'+window.location.hostname+'/api/admin/addProduct.php', {
             user_id: sessionStorage.getItem('user_id'),
             name: addingProduct.name,
             price: addingProduct.price,
@@ -105,7 +105,7 @@ function ProductsConfig() {
         setLoading(true);
         setProducts();
 
-        axios.post('http://'+window.location.hostname+'/api/products.php')
+        axios.post('https://'+window.location.hostname+'/api/products.php')
         .then(function (response) {
             let result = response.data;
             if (result.error) {

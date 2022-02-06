@@ -15,7 +15,7 @@ function Product({ product }) {
         if (!sessionStorage.getItem('user_id')) {
             window.location.href = '/entrar';
         }
-        axios.post('http://' + window.location.hostname + '/api/addToCart.php', {
+        axios.post('https://' + window.location.hostname + '/api/addToCart.php', {
             product_id: id,
             user_id: sessionStorage.getItem('user_id'),
             quantity: itemQtd

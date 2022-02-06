@@ -57,7 +57,7 @@ function PaymentsStep() {
         });
         
         if(!status) {
-        axios.post('http://'+window.location.hostname+'/api/mycart.php',
+        axios.post('https://'+window.location.hostname+'/api/mycart.php',
         {user_id: sessionStorage.getItem('user_id')})
         .then(function (response) {
             if (response.data.error) {
@@ -73,7 +73,7 @@ function PaymentsStep() {
                 setFullNameProduct(fullName);
                 setLoadingAll(false);
                 
-                axios.post('http://'+window.location.hostname+'/api/getPreferenceID.php',{
+                axios.post('https://'+window.location.hostname+'/api/getPreferenceID.php',{
                             title: fullName,
                             quantity: 1,
                             currency_id: "BRL",
@@ -123,7 +123,7 @@ function PaymentsStep() {
                             preference_id: preference_id
                         }
                     );
-                    axios.post('http://'+window.location.hostname+'/api/neworder.php', {
+                    axios.post('https://'+window.location.hostname+'/api/neworder.php', {
                         user_id: sessionStorage.getItem('user_id'),
                         payment_id: payment_id,
                         total_value: sessionStorage.getItem('totalProductValue'),

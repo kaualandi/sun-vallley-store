@@ -33,7 +33,7 @@ function Register() {
         e.preventDefault();
         setError(false);
         setLoading(true);
-        axios.post('http://'+window.location.hostname+'/api/register.php', registerInfors)
+        axios.post('https://'+window.location.hostname+'/api/register.php', registerInfors)
                 .then(function (response) {
                     let result = response.data;
                     if(result.success) {
