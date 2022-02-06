@@ -43,3 +43,15 @@
     margin: 0 auto;
     margin-top: 1rem;
 }
+.help .accordion-item {
+    background-color: var(--background-two-ts);
+    color: var(--title);
+}
+.help .accordion-item .accordion-button {
+    background-color: var(--background-two-ts);
+    color: var(--title);
+}
+.help .accordion-item .accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgb(113 47 195 / 25%);
+    color: rgb();
+}

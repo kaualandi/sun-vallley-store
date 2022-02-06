@@ -34,3 +34,33 @@
     margin-top: 1rem;
     height: 100%;
 }
+.product-buy .select-quatity {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    gap: .5rem;
+}
+.product-buy .select-quatity input {
+    border-radius: 0;
+    text-align: center;
+}
+.product-buy .select-quatity button.btn {
+    margin-top: 0;
+}
+.product-buy .select-quatity button.btn.reduce {
+    border-radius: 8px 0 0 8px;
+}
+.product-buy .select-quatity button.btn.increase {
+    border-radius: 0 8px 8px 0;
+}
+.product-buy .select-quatity input::-webkit-outer-spin-button,
+.product-buy .select-quatity input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.product-buy .select-quatity input[type=number] {
+    -moz-appearance:textfield;
+}

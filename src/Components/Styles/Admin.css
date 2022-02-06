@@ -125,9 +125,6 @@
 .admin .admin-content .table button.button-table.edit:hover {
     background: blue;
 }
-.admin .admin-content .table button.button-table.delete:hover {
-    background: red;
-}
 
 .admin .admin-content #expense #expense-overview-content {
     display: flex;
@@ -153,4 +150,11 @@
     background-color: #2c4b28;
     border-radius: 10px;
     border: 2px solid #0f1a0e;
+}
+
+.admin .admin-content .usersadmin .table button.button-table {
+    padding: .2em;
+}
+.admin .admin-content .usersadmin .table button.button-table+button.button-table {
+    margin-left: .25rem;
 }

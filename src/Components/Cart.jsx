@@ -9,6 +9,11 @@ function Cart() {
     if (!totalValue) {
         buttonDisabled = true;
     }
+    function finishOrder() {
+        if (!buttonDisabled) {
+            window.location.href = "/finalizar-pedido";
+        }
+    }
     return (
         <div className="cart">
             <HeaderContents title="Carrinho"/>
@@ -20,7 +25,7 @@ function Cart() {
                     <div className="cart-content__buy-total">
                         <p>Total: {totalValue.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
                     </div>
-                    <button disabled={buttonDisabled} className="btn">Finalizar pedido</button>
+                    <button disabled={buttonDisabled} onClick={finishOrder} className="btn">Finalizar pedido</button>
                 </div>
                 <div className='payment-metods'>
                     <img src="https://i.imgur.com/apj1EAq.png" alt="metodos de pagamentos" />

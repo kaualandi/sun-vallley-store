@@ -3,79 +3,55 @@ import Loading from './Loading';
 import CartItem from './CartItem';
 import EmptyCart from './EmptyCart';
 import './Styles/CartList.css';
+import axios from 'axios';
 
 function CartList({setTotalValue}) {
     const [loading, setLoading] = useState(false);
-    // const [error, setError] = useState(null);
-    const cartItens = [
-        {
-            id: 0,
-            name: 'Minecraft Semi Acesso',
-            description: 'Minecraft Semi Acesso: Não pode mudar e-mail.',
-            category: 'game',
-            price: 8.50,
-            image: 'https://www.minecraft.net/etc.clientlibs/minecraft/clientlibs/main/resources/img/minecraft-creeper-face.jpg'
-        },
-        {
-            id: 1,
-            name: 'Spotify Premium',
-            description: 'Spotify Premium Family: Pode mudar quaisquer coisas.',
-            price: 7.50,
-            category: 'streaming',
-            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Spotify_App_Logo.svg/2048px-Spotify_App_Logo.svg.png'
-        },
-        {
-            id: 2,
-            name: 'NordVPN',
-            description: 'NordVPN: Pode mudar quaisquer coisas.',
-            price: 8.50,
-            category: 'vpn',
-            image: 'https://privacyonline.com.br/wp-content/uploads/2017/01/nordvpn-logo-1-1024x1024.jpg'
-        },
-        {
-            id: 3,
-            name: 'Discord Nitro',
-            description: 'Discord Nitro 3 meses: Apenas para novos usuários.',
-            price: 7.50,
-            category: 'premium',
-            image: 'https://production-gameflipusercontent.fingershock.com/us-east-1:d158cb15-61c1-4eb1-92bb-41c2c15265ea/bde6e85e-c9ca-4c4b-9ef4-28d6ba9b57c6/bc3c672a-8000-4b56-912a-c56876a02e5c/640x640.jpg'
-        },
-    ]
+    const [error, setError] = useState(null);
+    const [cartItens, setCartItens] = useState([]);
+
+    function calcTotalValue(data) {
+        let totalValue = 0;
+        data.forEach(item => {
+            totalValue += (item.price * item.qtd);
+        });
+        return totalValue;
+    }
+
     useEffect(() => {
         setLoading(true);
-        setTimeout(() => {
+        axios.post('http://'+window.location.hostname+'/api/mycart.php',
+        {user_id: sessionStorage.getItem('user_id')})
+        .then(function (response) {
+            if (response.data.error) {
+                setError(response.data.error);
+                setLoading(false);
+            } else {
+                setCartItens(response.data);
+                setLoading(false);
+                setTotalValue(calcTotalValue(response.data));
+            }
+        })
+        .catch(function (error) {
+            setError('Um erro aconteceu, mas só Deus sabe qual!');
             setLoading(false);
-            setTotalValue(cartItens.reduce((acc, cur) => {
-                return acc + cur.price;
-            }, 0));
-        }, 800);
-        // fetch(`/api/products?${filter}`)
-        // .then(res => res.json())
-        // .then(res => {
-        //     setProducts(res);
-        //     setLoading(false);
-        // })
-        // .catch(err => {
-        //     setError(err);
-        //     setLoading(false);
-        // });
-        
+        });
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-    
     if (loading) {
         return <Loading />;
     }
-    // if (error) {
-    //     return <div>Error: {error.message}</div>;
-    // }
-    if (cartItens.length === 0) {
+    if (error === 'Não há produtos no carrinho!' || cartItens.length === 0) {
         return <EmptyCart/>;
+    }
+    if (error) {
+        return <div>{error}</div>;
     }
     return (
         <div className="cart-list row">
+            {error && <div>{error}</div>}
         {cartItens.map(cartItem => (
-            <CartItem key={cartItem.id} cartItem={cartItem}/>
+            <CartItem key={cartItem.cart_id} cartItem={cartItem} />
         ))}
         </div>
     );

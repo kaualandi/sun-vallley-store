@@ -11,3 +11,27 @@
 .my-orders table {
     min-width: 650px;
 }
+.my-orders table td.actions {
+    text-align: center;
+    width: 81px;
+}
+.my-orders table button.button-table {
+    color: var(--title);
+    border: 0;
+    background: transparent;
+    transition: var(--transition);
+    font-size: 1.2rem;
+    display: inline;
+    padding: .3em;
+    width: 30px;
+    height: 30px;
+    background: var(--background-two);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid var(--text);
+}
+.my-orders table button.button-table.check:hover {
+    background: limegreen;
+}

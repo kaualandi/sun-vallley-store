@@ -1,6 +1,5 @@
 .loading {
   height:4px;
-  width:130px;
   background:
    linear-gradient(var(--primary) 0 0),
    linear-gradient(var(--primary) 0 0),
@@ -9,6 +8,14 @@
  background-repeat: no-repeat;
  animation: p6 3s infinite;
  width: 100%;
+}
+.rescurepass-container .loading, 
+.register-container .loading, 
+.product-buy .loading, 
+.payments-container .loading, 
+.login-container .loading {
+  width: 150px;
+  margin: 0 auto;
 }
 
 @keyframes p6 {

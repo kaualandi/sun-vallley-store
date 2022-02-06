@@ -1,0 +1,11 @@
+Options -MultiViews
+Options All -Indexes
+<files ~ "^.*\.([Hh][Tt][Aa])">
+    order allow,deny
+    deny from all
+    satisfy all
+</files>
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [QSA,L]
+

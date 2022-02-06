@@ -22,7 +22,9 @@ function Help() {
             <div className="help-content container">
                 <section id="faq">
                     <h3>Perguntas frequentes</h3>
+                    <div className="accordion" id="accordionExample">
                     <FaqList />
+                    </div>
                 </section>
                 <section id="contact">
                     <h3>Contato</h3>

@@ -1,0 +1,23 @@
+.empty-cart {
+    color: var(--text);
+    max-width: 540px;
+    margin: 0 auto;
+}
+.empty-cart .empty-cart__image {
+    width: 50%;
+    max-width: 400px;
+    animation: controllerMove 2s infinite alternate ease-in-out;
+}
+@keyframes controllerMove {
+    from {
+        transform: translate(-5%, -5%) rotate(-5deg);
+    }
+}
+.empty-cart .empty-cart__content a {
+    color: var(--text);
+    text-decoration: none;
+    transition: var(--transition);
+    background: var(--background-two-ts);
+    padding: 1rem;
+    display: inline-block;
+}

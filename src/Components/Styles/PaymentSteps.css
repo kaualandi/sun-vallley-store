@@ -21,7 +21,7 @@
     margin: 0 .5rem;
 }
 .payments-container .payments .payments-footer {
-    margin-top: .8rem;
+    margin-top: 1.5rem;
 }
 .payments-container .payments .payments-footer a {
     color: var(--text);
@@ -31,4 +31,38 @@
 .payments-container .payments .payments-footer a:hover {
     color: var(--text-hover);
     text-decoration: underline;
+}
+
+.input-card-container .row .col-12,
+.input-card-container .row .col-6 {
+    margin-top: 1rem;
+}
+
+.payments-container .payments-methods-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.payments-container .payments-methods-container .btn-pay {
+    padding: 1rem;
+    border: none;
+    background: var(--background-two);
+    color: var(--title);
+    transition: var(--transition);
+    width: 100px;
+}
+.payments-container .payments-methods-container .btn-pay+.btn-pay {
+    margin-left: 1rem;
+}
+
+.card-content__buy p {
+    margin-bottom: 0;
+}
+.payments-container .payments-content button {
+    padding: 1rem;
+}
+.payments-container .alert {
+    margin-top: 2rem;
 }

@@ -1,19 +1,21 @@
 import React, {useEffect, useState} from 'react';
 import moment from 'moment';
+import axios from 'axios';
 import Loading from '../Loading';
 
 function Orders({setAllOrders, allOrders}) {
     const [orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(false);
     const [filter, setFilter] = useState('');
-    // const [error, setError] = useState(null);
+    const [error, setError] = useState(null);
+    const [success, setSuccess] = useState(null);
     const hoje = moment();
     function isWarranty(date) {
         console.log();
-        let partesData = date.split("/");
-        let day = partesData[0];
+        let partesData = date.split("-");
+        let day = partesData[2];
         let month = partesData[1] - 1;
-        let year = partesData[2];
+        let year = partesData[0];
         let data = new Date(year, month, day);
         if(hoje.diff(data, 'days') <= 30) {
             return true;
@@ -22,56 +24,112 @@ function Orders({setAllOrders, allOrders}) {
         }
     }
 
-    function actionOrder(id, action) {
-        console.log('actionOrder:', id, action);
+    function actionOrder(order_id, action) {
+        setLoading(true);
+        axios.post('http://'+window.location.hostname+'/api/admin/alterOrder.php', {
+            user_id: sessionStorage.getItem('user_id'),
+            order_id: order_id,
+            action: action
+        })
+        .then(function (response) {
+            let result = response.data;
+            if (result.error) {
+                setError(result.error);
+                setLoading(false);
+            } else {
+                setSuccess(result.success);
+                
+                axios.post('http://'+window.location.hostname+'/api/getOrders.php', {
+            user_id: sessionStorage.getItem('user_id')
+        })
+            .then(function (response) {
+                let result = response.data;
+                if (result.error) {
+                    setError(result.error);
+                    setLoading(false);
+                } else {
+                    const AllOrders = result.map(order => {
+                        return {
+                            id: order.order_id,
+                            date: order.data.split('-').reverse().join('/'),
+                            client_name: order.name,
+                            client_email: order.email,
+                            details: order.details,
+                            total: parseFloat(order.total),
+                            status: order.order_status,
+                            pay_status: order[8],
+                            preference_id: order.preference_id,
+                            warranty: isWarranty(order.data),
+                            };
+                    });
+                    if (filter === '') {
+                        setOrders(AllOrders);
+                    } else {
+                        const filteredOrders = AllOrders.filter(status => status.status === filter);
+                        setOrders(filteredOrders);
+                    }
+                    setLoading(false);
+                }
+            })
+            .catch(function (error) {
+                setError('Um erro aconteceu, mas só Deus sabe qual. Tente recarregar a página.');
+                setLoading(false);
+            });
+
+                setLoading(false);
+            }
+        })
+        .catch(function (error) {
+            setError('Um erro aconteceu, mas só Deus sabe qual. Tente recarregar a página.');
+            setLoading(false);
+        });
     }
 
     useEffect(() => {
         setLoading(true);
-        const AllOrders = [
-            {
-                id: 0,
-                date: '01/01/2021',
-                client: 'João da Silva',
-                emailClient: 'demo@host.com',
-                details: 'Spotify, Minecraft, LOL',
-                total: 20,
-                status: 'fechado',
-                warranty: isWarranty('01/01/2021') ? 'Sim' : 'Não'
-            },
-            {
-                id: 1,
-                date: '01/01/2022',
-                client: 'João da Silva',
-                emailClient: 'demo@host.com',
-                details: 'Spotify, Minecraft, LOL',
-                total: 20,
-                status: 'fechado',
-                warranty: isWarranty('01/01/2022') ? 'Sim' : 'Não'
-            },
-        ];
-        if (filter === '') {
-            setOrders(AllOrders);
-        } else {
-            const filteredOrders = AllOrders.filter(status => status.status === filter);
-            setOrders(filteredOrders);
-        }
-        // fetch(`/api/orders?filter=${filter}`)
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         setOrders(data);
-        //         setLoading(false);
-        //     })
-        //     .catch(err => {
-        //         // setError(err);
-        //         setLoading(false);
-        //     });
-        
-        setTimeout(() => {
-            setLoading(false);
-        }, 1000);
+        axios.post('http://'+window.location.hostname+'/api/getOrders.php', {
+            user_id: sessionStorage.getItem('user_id')
+        })
+            .then(function (response) {
+                let result = response.data;
+                if (result.error) {
+                    setError(result.error);
+                    setLoading(false);
+                } else {
+                    const AllOrders = result.map(order => {
+                        return {
+                            id: order.order_id,
+                            date: order.data.split('-').reverse().join('/'),
+                            client_name: order.name,
+                            client_email: order.email,
+                            details: order.details,
+                            total: parseFloat(order.total),
+                            status: order.order_status,
+                            pay_status: order[8],
+                            preference_id: order.preference_id,
+                            warranty: isWarranty(order.data),
+                            };
+                    });
+                    if (filter === '') {
+                        setOrders(AllOrders);
+                    } else {
+                        const filteredOrders = AllOrders.filter(status => status.status === filter);
+                        setOrders(filteredOrders);
+                    }
+                    setLoading(false);
+                }
+            })
+            .catch(function (error) {
+                setError('Um erro aconteceu, mas só Deus sabe qual. Tente recarregar a página.');
+                setLoading(false);
+            });
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [filter]);
+
+    function closeButton(state) {
+        if ('error') setError(null);
+        if ('success') setSuccess(null);
+    }
     
     if (loading) return <Loading />;
 
@@ -109,6 +167,8 @@ function Orders({setAllOrders, allOrders}) {
 
     return (
         <div className="orders-content">
+            {error && <div className="alert alert-danger" role="alert">{error} <button onClick={() => closeButton('error')} className="button-close-alert no-style"><i className="fa-solid fa-xmark"></i></button></div>}
+            {success && <div className="alert alert-success" role="alert">{success} <button onClick={() => closeButton('success')} className="button-close-alert no-style"><i className="fa-solid fa-xmark"></i></button></div>}
             <div className="orders-filter">
                 <h3>Filtros</h3>
                 <button onClick={() => setFilter('')} className='btn'>Todos</button>
@@ -135,15 +195,21 @@ function Orders({setAllOrders, allOrders}) {
             <tbody>
                 {orders.map(order => (
                     <tr key={order.id}>
-                        <td>{order.id}</td>
+                        <td>#{order.id}</td>
                         <td>{order.date}</td>
-                        <td>{order.client}</td>
-                        <td>{order.emailClient}</td>
+                        <td>{order.client_name}</td>
+                        <td>{order.client_email}</td>
                         <td>{order.details}</td>
                         <td>{order.total.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</td>
                         <td>{order.status}</td>
-                        <td>{order.warranty}</td>
-                        <td className='actions'><button onClick={() => actionOrder(order.id, 'close')} className='button-table close'><i className="fa-solid fa-xmark"></i></button> <button onClick={() => actionOrder(order.id, 'check')} className="button-table check"><i className="fa-solid fa-check"></i></button></td>
+                        <td>{order.warranty ? 'Sim' : 'Não'}</td>
+                        <td className='actions'>
+                            {order.status === 'aberto' ? (
+                                <>
+                                    <button onClick={() => actionOrder(order.id, 'cancelado')} className='button-table close'><i className="fa-solid fa-xmark"></i></button> <button onClick={() => actionOrder(order.id, 'fechado')} className="button-table check"><i className="fa-solid fa-check"></i></button>
+                                </>
+                            ) : ''}
+                        </td>
                     </tr>
                 ))}
             </tbody>

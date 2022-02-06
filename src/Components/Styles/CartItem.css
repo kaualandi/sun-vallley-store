@@ -31,3 +31,40 @@
 .cartItem .cartItem-container .cartItem-info p, .cartItem .cartItem-container .cartItem-drop button.btn {
     margin: 0;
 }
+.cartItem-drop {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+}
+.cartItem-drop .select-quatity {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+}
+.cartItem-drop .select-quatity input {
+    border-radius: 0;
+    text-align: center;
+    width: 38.78px;
+}
+.cartItem-drop .select-quatity button.btn {
+    margin-top: 0;
+    width: 38.78px;
+}
+.cartItem-drop .select-quatity button.btn.reduce {
+    border-radius: 8px 0 0 8px;
+}
+.cartItem-drop .select-quatity button.btn.increase {
+    border-radius: 0 8px 8px 0;
+}
+.cartItem-drop .select-quatity input::-webkit-outer-spin-button,
+.cartItem-drop .select-quatity input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.cartItem-drop .select-quatity input[type=number] {
+    -moz-appearance:textfield;
+}
